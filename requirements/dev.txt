@@ -4,6 +4,8 @@
 
 -r prod.txt
 
+-r compiled.txt
+
 # For testing.
 django-nose==1.2
 mock==1.0.1

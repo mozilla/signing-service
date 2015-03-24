@@ -4,7 +4,7 @@ python:
 install:
   - pip install --no-deps -r requirements/dev.txt --find-links https://pyrepo.addons.mozilla.org/
 before_script:
-  - flake8 . --exclude=./docs/conf.py
+  - flake8 .
 script: ./manage.py test --noinput -s
 notifications:
   irc:
