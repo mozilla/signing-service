@@ -6,11 +6,6 @@
 # appropriate site settings like this:
 #
 # from .sites.dev.settings_base import *
-
-
-
-# For local development, here are some decent defaults:
-
 from . import base
 
 # This is for development:
@@ -29,33 +24,7 @@ MANAGERS = ADMINS
 DEBUG = TEMPLATE_DEBUG = True
 
 # Make this unique, and don't share it with anybody.  It cannot be blank.
-SECRET_KEY = ''
-
-## Log settings
-
-#LOGGING = base.LOGGING
-#LOGGING['loggers']['']['handlers'] = ['console']
-#LOGGING['loggers']['cef']['handlers'] = ['console']
-
-# Debug stuff:
-
-#LOGGING['loggers']['hawkrest'] = {
-#    'handlers': ['console'],
-#    'level': 'DEBUG',
-#    'propagate': False,
-#}
-#
-#LOGGING['loggers']['mohawk'] = {
-#    'handlers': ['console'],
-#    'level': 'DEBUG',
-#    'propagate': False,
-#}
-#
-#LOGGING['loggers']['boto'] = {
-#    'handlers': ['console'],
-#    'level': 'DEBUG',
-#    'propagate': False,
-#}
+SECRET_KEY = 'asdasdas'
 
 HAWK_CREDENTIALS = base.HAWK_CREDENTIALS
 # Set these to long random strings.

@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.core.exceptions import ImproperlyConfigured
 
 from commonware.log import getLogger
 from cef import log_cef as orig_log_cef

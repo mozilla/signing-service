@@ -4,8 +4,6 @@ import jwt
 
 from django.test import TestCase
 
-from django.core.urlresolvers import reverse
-
 from rest_framework.test import APIRequestFactory
 
 from signing_service.receipts.views import ReceiptsView

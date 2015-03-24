@@ -1,11 +1,10 @@
-import os
-
 from setuptools import setup, find_packages
 
 
 setup(name='signing_service',
       version='0.1',
-      description="Mozilla's Marketplace receipt, FirefoxOS app, and addons signing service",
+      description="Mozilla's Marketplace receipt, FirefoxOS app, "
+                  "and addons signing service",
       long_description='',
       author='Ryan Tilder and contributors',
       author_email='services-dev@mozilla.com',

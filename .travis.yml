@@ -1,0 +1,14 @@
+language: python
+python:
+ - "2.7"
+install:
+  - pip install --no-deps -r requirements/dev.txt --find-links https://pyrepo.addons.mozilla.org/
+before_script:
+  - flake8 . --exclude=./docs/conf.py
+script: ./manage.py test --noinput -s
+notifications:
+  irc:
+    channels:
+      - "irc.mozilla.org#amo-bots"
+    on_success: change
+    on_failure: always

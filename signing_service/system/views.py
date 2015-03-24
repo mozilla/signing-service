@@ -3,7 +3,6 @@ from commonware.log import getLogger
 from rest_framework.response import Response
 
 from signing_service.base import APIView, log_cef, UnprotectedAPIView
-from signing_service.exceptions import ConflictError
 
 
 log = getLogger(__name__)
