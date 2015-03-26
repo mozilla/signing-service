@@ -59,5 +59,5 @@ class ReceiptsViewTest(TestCase):
                    "verify": "https://appstore.com/verify/5169314356"}
         request = self.factory.post('/1.0/sign', receipt, format='json')
         response = self.view(request)
-        signed_receipt, certificate = response.data['receipt'].split('~')
+        certificate, signed_receipt = response.data['receipt'].split('~')
         self.assertEqual(receipt, jwt.decode(signed_receipt, verify=False))

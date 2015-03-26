@@ -50,5 +50,5 @@ class ReceiptsView(APIView):
         # to JSON before signing.
         signed_jwt = _SIGNER.sign(receipt)
 
-        return Response({'receipt': '~'.join((signed_jwt,
-                                              _SIGNER.certificate))})
+        return Response({'receipt': '~'.join((_SIGNER.certificate,
+                                              signed_jwt))})
