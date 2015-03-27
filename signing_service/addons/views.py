@@ -9,7 +9,6 @@ from commonware.log import getLogger
 from rest_framework.response import Response
 
 from websigning import new_addon_signer
-from websigning.sign.xpi import ParsingError, Signature
 
 from signing_service.base import APIView
 from signing_service.exceptions import BadRequestError
@@ -19,14 +18,16 @@ log = getLogger(__name__)
 
 
 # Initialize the signer
-_SIGNER = new_addon_signer(settings.SIGNING_SERVICE_ADDONS_CA_KEY_FILE,
-                           settings.SIGNING_SERVICE_ADDONS_CA_CERT_FILE,
-                           settings.SIGNING_SERVICE_ADDONS_BASE_DN,
-                           backend=settings.SIGNING_SERVICE_ENGINE,
-                           key_size=settings.SIGNING_SERVICE_ADDONS_KEY_SIZE,
-                           validity_lifetime=settings.SIGNING_SERVICE_ADDONS_LIFETIME,  # noqa
-                           digest_alg=settings.SIGNING_SERVICE_ADDONS_DIGEST_ALGO,  # noqa
-                           cert_extensions=settings.SIGNING_SERVICE_ADDONS_CERT_EXTENSIONS)  # noqa
+_SIGNER = new_addon_signer(
+    settings.SIGNING_SERVICE_ADDONS_CA_KEY_FILE,
+    settings.SIGNING_SERVICE_ADDONS_CA_CERT_FILE,
+    settings.SIGNING_SERVICE_ADDONS_BASE_DN,
+    backend=settings.SIGNING_SERVICE_ENGINE,
+    key_size=settings.SIGNING_SERVICE_ADDONS_KEY_SIZE,
+    validity_lifetime=settings.SIGNING_SERVICE_ADDONS_LIFETIME,
+    digest_alg=settings.SIGNING_SERVICE_ADDONS_DIGEST_ALGO,
+    cert_extensions=settings.SIGNING_SERVICE_ADDONS_CERT_EXTENSIONS
+)
 
 
 class SignAddonForm(SignAppForm):

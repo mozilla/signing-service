@@ -1,4 +1,4 @@
-from .base import *
+from .base import *  # noqa
 
 # Any settings here will override the base settings but only while runnning the
 # test suite.

@@ -2,7 +2,6 @@ import base64
 import os
 import tempfile
 
-from django.core.urlresolvers import reverse
 from django.test import TestCase
 
 from rest_framework.test import APIRequestFactory
@@ -44,7 +43,7 @@ class AddonsViewTest(TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.data['error'],
                          {'addon_id': [u'Ensure this value has at least 4 '
-                                        'characters (it has 3).']})
+                                       u'characters (it has 3).']})
 
     def test_04_long_addon_id(self):
         with open(test_file('signature')) as f:
@@ -54,7 +53,7 @@ class AddonsViewTest(TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.data['error'],
                          {'addon_id': [u'Ensure this value has at most 128 '
-                                        'characters (it has 150).']})
+                                       u'characters (it has 150).']})
 
     def test_05_empty_file(self):
         with tempfile.NamedTemporaryFile(delete=True) as f:

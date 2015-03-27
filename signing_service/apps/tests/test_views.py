@@ -3,8 +3,6 @@ import os
 
 from django.test import TestCase
 
-from django.core.urlresolvers import reverse
-
 from rest_framework.test import APIRequestFactory
 
 from signing_service.apps.views import AppsView
@@ -19,11 +17,8 @@ test_file.__test__ = False  # noqa
 VIEW = AppsView.as_view()
 FACTORY = APIRequestFactory()
 
-class AppsViewTest(TestCase):
 
-#    def setUp(self):
-#        VIEW = AppsView.as_view()
-#        FACTORY = APIRequestFactory()
+class AppsViewTest(TestCase):
 
     def test_no_get(self):
         request = FACTORY.get('/1.0/sign_app')
