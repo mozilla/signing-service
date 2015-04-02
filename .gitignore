@@ -10,4 +10,4 @@ docs/_build/*
 *.mo
 *.db
 dist
-signing-service/settings/local.py
+signing_service/settings/local.py
