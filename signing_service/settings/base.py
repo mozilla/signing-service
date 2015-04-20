@@ -225,7 +225,7 @@ NOSE_ARGS = [
 
 # When True, it means Hawk authentication will be disabled everywhere.
 # This is mainly just to get a speed-up while testing.
-SKIP_HAWK_AUTH = False
+SKIP_HAWK_AUTH = True
 
 HAWK_CREDENTIALS = {
     # These credentials are for requests the Marketplace to communicate
@@ -279,7 +279,7 @@ SIGNING_SERVICE_RECEIPTS_CERT_FILE = os.path.join(BASE_DIR, 'receipts',
 # A list of permitted issuers that we are signing for.  This list should be
 # a  http://, https://, or app:// URLs
 SIGNING_SERVICE_RECEIPTS_ISSUERS = (
-    'https://marketplace-dev.allizom.org',
+    'http://mp.dev',
 )
 
 # End of receipt signing specific options
