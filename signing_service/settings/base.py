@@ -279,6 +279,7 @@ SIGNING_SERVICE_RECEIPTS_CERT_FILE = os.path.join(BASE_DIR, 'receipts',
 # A list of permitted issuers that we are signing for.  This list should be
 # a  http://, https://, or app:// URLs
 SIGNING_SERVICE_RECEIPTS_ISSUERS = (
+    'https://marketplace-dev.allizom.org',
     'http://mp.dev',
 )
 
